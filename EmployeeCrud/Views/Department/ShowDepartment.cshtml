@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EmployeeCrudOperation.Models.Department>
+@{
+    ViewData["Title"] = "ShowDepartment";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-success">All Departments</h1>
+            <hr />
+            <a class="btn btn-primary mb-2" asp-action="CreateDeapartment" asp-controller="Department">Create Department</a>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>Id</th>
+                    <th>Department</th>
+                    <th>Action</th>
+                </tr>
+                @foreach(var d in Model)
+            {
+                <tr class="text-center">
+                    <td>@d.Id</td>
+                    <td>@d.Depart</td>
+                    <td>
+                        <a class="btn btn-info" asp-action="UpdateDepartment" asp-controller="Department" asp-route-id="@d.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="DeleteDepartment" asp-controller="Department" asp-route-id="@d.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </table>
+        </div>
+    </div>
+</div>
+

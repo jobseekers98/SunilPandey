@@ -1,0 +1,42 @@
+﻿@model EmployeeCrudOperation.Models.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center text-info">Log-In</h2>
+                </div>
+
+                <div class="card-body">
+                    <form method="post" asp-action="Login">
+                        <div class="form-group">
+                            <label asp-for="Username"></label>
+                            <input type="text" asp-for="Username" class="form-control" placeholder="Enter your username or email" />
+                            <span class="text-danger" asp-validation-for="Username"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Enter your password" />
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-sm btn-primary float-right" value="Submit" />
+                        </div>
+
+                        <h4 class="text-danger text-center">@ViewBag.message</h4>
+                        <div class="text-danger" asp-validation-summary="All"></div>
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-sm rounded-bottom btn-outline-info m-1">Back to Home</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

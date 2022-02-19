@@ -1,0 +1,75 @@
+﻿@model EmployeeCrudOperation.Models.ViewModel.SignUpUserViewModel
+@{
+    ViewData["Title"] = "SignUP";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center text-info">Sign-Up</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="SignUp">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="FirstName"></label>
+                                    <input type="text" asp-for="FirstName" class="form-control" placeholder="Enter your first name" />
+                                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName"></label>
+                                    <input type="text" asp-for="LastName" class="form-control" placeholder="Enter your last name" />
+                                    <span class="text-danger" asp-validation-for="LastName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Gender"></label>
+                                    <select class="form-control" asp-for="Gender">
+                                        <option value="0">--Select Gender--</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email"></label>
+                                    <input type="text" asp-for="Email" class="form-control" placeholder="Enter your email " />
+                                    <span class="text-danger" asp-validation-for="Email"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Password"></label>
+                                    <input type="password" asp-for="Password" class="form-control" placeholder="Enter password" />
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ConfirmPassword"></label>
+                                    <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Enter confirm password" />
+                                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Phone"></label>
+                                    <input type="text" asp-for="Phone" class="form-control" placeholder="Enter your mobile number" />
+                                    <span class="text-danger" asp-validation-for="Phone"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-sm btn-primary float-right" value="Submit" />
+                        </div>
+                        <h6 class="text-danger text-center">@ViewBag.Duplicate</h6>
+                        <h4 class="text-danger text-center">@ViewBag.message</h4>
+                        <div class="text-danger" asp-validation-summary="All"></div>
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-sm rounded-bottom btn-outline-info m-1">Back to Home</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,31 @@
+﻿@model EmployeeCrudOperation.Models.ViewModel.ProductCreateViewModel
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-success">Product Details</h1>
+                </div>
+                <div class="card-body">
+                    <div class="card-header text-center">
+                        <img src="../../@Model.OldImage" style="height:100px;width:100px;" />
+                    </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr class="text-center">
+                                   <th>Id</th>
+                                   <th>Product Name</th>
+                                </tr>
+                                <tr class="text-center">
+                                    <td>@Model.Id</td>
+                                    <td>@Model.ProductName</tr>
+                            </table>
+                            <a class="btn btn-sm btn-primary" asp-action="Index" asp-controller="Product">Back to Home</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+

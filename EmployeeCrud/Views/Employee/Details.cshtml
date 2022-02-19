@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EmployeeCrudOperation.Models.ViewModel.EmployeeDepartmentViewModel>
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    @foreach (var d in Model)
+                    {
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25"> <img src="../../@d.Image"  style="height:100px;width:100px;" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="f-w-600">@d.Department</h6>
+                                    @*<p>@d.Department</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>*@
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600 text-center">Employee Details</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Name</p>
+                                            <h6 class="text-muted f-w-400">@d.FirstName @d.LastName</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Gender</p>
+                                            <h6 class="text-muted f-w-400">@d.Gender</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Email</p>
+                                            <h6 class="text-muted f-w-400">@d.Email</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Phone</p>
+                                            <h6 class="text-muted f-w-400">@d.Mobile</h6>
+                                        </div>
+                                    </div>
+                                    @*<h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>*@
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Address</p>
+                                            <h6 class="text-muted f-w-400">@d.Address</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Salary</p>
+                                            <h6 class="text-muted f-w-400">@d.Salary</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div>
+                    <a class="btn btn-sm btn-info" asp-action="index" asp-controller="Employee" asp-route-id="">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
